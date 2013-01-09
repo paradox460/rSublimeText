@@ -1,0 +1,281 @@
+@import "compass/css3";
+
+$active: rgb(245, 245, 245);
+$hover: rgb(200, 200, 200);
+$inactive: rgb(175, 175, 175);
+$background: hsl(210,6%,12%);
+$foreground: hsl(160, 3%, 82%);
+
+body {
+  background-color: $background;
+  color: $foreground;
+}
+
+
+#header {
+  background: {
+    image: url(%%tabset-background%%);
+    repeat: repeat-x;
+    position: bottom left;
+    color: hsl(0,0%,22%);
+  }
+  border: none;
+
+@for $i from 1 through 8 {
+  .tabmenu li:nth-child(#{$i}) {
+    z-index: 9 - $i;
+
+    a {
+      z-index: 9 - $i;
+    }
+  }
+}
+
+  .tabmenu {
+    margin-bottom: 3px;
+
+    li {
+      background: {
+        image: url(%%tab-inactive-left%%);
+        repeat: no-repeat;
+        position: bottom left;
+        color: transparent;
+      }
+      display: inline-block;
+      padding-left: 18px;
+      margin: 0 -8px;
+      position: relative;
+
+      a {
+        background: {
+          image: url(%%tab-inactive-right%%);
+          repeat: no-repeat;
+          position: bottom right;
+          color: transparent;
+        }
+        height: 26px;
+        display: inline-block;
+        color: $inactive;
+        line-height: 24px;
+        padding: 0;
+        padding-right: 18px;
+        position: relative;
+      }
+
+      &:hover {
+        background-image: url(%%tab-hover-left%%);
+
+        a {
+          background-image: url(%%tab-hover-right%%);
+          color: $hover;
+        }
+      }
+      &.selected {
+        z-index: 9;
+        background-image: url(%%tab-active-left%%);
+
+        a {
+          background-image: url(%%tab-active-right%%);
+          color: $active;
+          border: none;
+        }
+      }
+    }
+  }
+
+  .pagename {
+    color: $hover;
+    display: inline-block;
+    margin-bottom: 5px;
+
+     a {
+      color: $hover;
+     }
+  }
+
+  #header-img {
+    margin-bottom: 3px;
+  }
+  #header-bottom-right {
+    background: {
+      image: url(%%status-bar-background%%);
+      position: top left;
+      repeat: repeat-x;
+      color: hsl(0,0%,15%);
+    }
+    color: $inactive;
+
+    #userbarToggle {
+      background: {
+      image: url(%%status-bar-background%%);
+      position: top left;
+      repeat: repeat-x;
+      color: hsl(0,0%,15%);
+      }
+      border-right: 1px solid hsl(0,0%,16%);
+      color: $inactive;
+    }
+
+    a {
+      color: $inactive;
+
+      &:hover {
+        color: $hover;
+      }
+    }
+  }
+}
+
+.content {
+  .keyHighlight {
+    background-color: hsl(216, 6%, 17%);
+    outline: none;
+  }
+  a, .thing .title, .thing .title.loggedin {
+    color: hsl(204, 33%, 68%);
+
+    &:hover {
+      color: hsl(173, 30%, 70%);
+    }
+
+    &:visited {
+      color: hsl(292, 21%, 71%);
+    }
+  }
+  .entry {
+    .tagline {
+      color: $foreground;
+    }
+    .buttons li a {
+      color: $foreground;
+
+      &:hover {
+        color: $hover;
+      }
+    }
+  }
+}
+.expando-button {
+  &.selftext {
+    &.collapsed, &.collapsed:hover {
+      background: {
+        image: url(%%expando-selftext-collapsed%%);
+        repeat: no-repeat;
+        position: center center;
+        color: transparent;
+      }
+      cursor: pointer;
+    }
+    &.expanded, &.expanded:hover {
+      background: {
+        image: url(%%expando-selftext-on%%);
+        repeat: no-repeat;
+        position: center center;
+        color: transparent;
+      }
+    }
+  }
+}
+
+.link {
+  .usertext .md {
+    background-color: hsl(216, 6%, 17%);
+    border: 1px solid hsl(212, 7%, 30%);
+  }
+}
+
+.comment {
+  border: 1px solid hsl(212, 7%, 30%);
+  a {
+    color: hsl(204, 33%, 68%) !important;
+
+    &:hover {
+      color: hsl(173, 30%, 70%) !important;
+    }
+
+    &:visited {
+      color: hsl(292, 21%, 71%) !important;
+    }
+  }
+}
+
+.roundfield {
+  background-color: hsl(0,0%,30%);
+  border: 1px solid hsl(0,0%,16%);
+}
+.infobar {
+  background-color: hsl(120, 1%, 66%);
+  border: 1px solid hsl(0,0%,16%);
+  color: black;
+}
+.side {
+  background-color: hsl(0,0%,12%);
+
+  input, #search input[type="text"] {
+    background-color: hsl(0,0%,22%);
+    border: 1px solid hsl(0,0%,16%);
+    color: $active;
+
+    @include border-radius(3px);
+  }
+  .titlebox h1 a {
+    color: $active;
+  }
+  .leavemoderator, form.toggle {
+    background-color: transparent;
+  }
+
+  #adlink {
+    background-color: transparent;
+  }
+  .spacer {
+    background-color: transparent;
+  }
+
+  .morelink {
+    background: {
+      image: url(%%morelink-left%%);
+      color: transparent;
+      repeat: no-repeat;
+      position: center left;
+    }
+    border: none;
+    font-size: 130%;
+    color: $active;
+
+    a {
+      color: $active;
+    }
+
+    .nub {
+      background: {
+        image: url(%%morelink-right%%);
+        color: transparent;
+        position: center right;
+      }
+    }
+  }
+
+  .icon-menu a {
+    background-color: transparent;
+  }
+
+  .linkinfo {
+    @extend .roundfield;
+  }
+}
+
+.tabmenu.formtab {
+  li a {
+    background-color: hsl(0,0%,18%);
+    color: $inactive;
+    border: none;
+  }
+  li.selected a {
+    background-color: hsl(0,0%,22%);
+    color: $active;
+  }
+}
+.formtabs-content {
+  border-top: 4px solid hsl(0,0%,22%);
+}
