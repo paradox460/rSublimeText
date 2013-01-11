@@ -21,6 +21,7 @@ body {
   }
   border: none;
 
+// This does the fancy tabs. Basically it sets a steadily decreasing z-index value, so you get the reverse-style stack
 @for $i from 1 through 8 {
   .tabmenu li:nth-child(#{$i}) {
     z-index: 9 - $i;
@@ -133,6 +134,12 @@ body {
   }
   a, .thing .title, .thing .title.loggedin {
     color: hsl(204, 33%, 68%);
+
+    &[href*="github.com/reddit/"] {
+        font-weight:bold;
+        padding-left:21px;
+        background:url(%%github%%) 0 50% no-repeat;
+    }
 
     &:hover {
       color: hsl(173, 30%, 70%);
