@@ -127,6 +127,15 @@ body {
   }
 }
 
+a[href*="github.com/"] {
+  font-weight:bold;
+  padding-left:21px;
+  background:url(%%github%%) 0 50% no-repeat;
+}
+a.title {
+  background: none;
+}
+
 .content {
   .keyHighlight {
     background-color: hsl(216, 6%, 17%);
@@ -134,12 +143,6 @@ body {
   }
   a, .thing .title, .thing .title.loggedin {
     color: hsl(204, 33%, 68%);
-
-    &[href*="github.com/reddit/"] {
-        font-weight:bold;
-        padding-left:21px;
-        background:url(%%github%%) 0 50% no-repeat;
-    }
 
     &:hover {
       color: hsl(173, 30%, 70%);
@@ -204,6 +207,17 @@ body {
       color: hsl(292, 21%, 71%) !important;
     }
   }
+}
+.new-comment .usertext-body {
+  background-color: #2D3B53;
+  border: solid 1px #43587F;
+  margin: -1px 0;
+}
+.thing.even.comment, .thing.even.comment .comment {
+  background-color:#2D2F30 !important;
+}
+.thing.odd.comment, .thing.odd.comment .comment {
+  background-color:#1D1F20 !important
 }
 
 .roundfield {
@@ -286,3 +300,4 @@ body {
 .formtabs-content {
   border-top: 4px solid hsl(0,0%,22%);
 }
+
