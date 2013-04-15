@@ -301,3 +301,7 @@ a.title {
   border-top: 4px solid hsl(0,0%,22%);
 }
 
+// RES stuff
+div.thing .RES-keyNav-activeElement, div.thing .RES-keyNav-activeElement.entry div.noncollapsed, div.thing .RES-keyNav-activeElement.entry div.noncollapsed div.md {
+  background-color: hsl(225, 67%, 16%) !important;
+}
