@@ -206,16 +206,59 @@ a.title
 .formtabs-content
   border-top: 4px solid hsl(0, 0%, 22%)
 
+.gold-accent, .gold-accent.comment-visits-box
+  background: hsl(0,0%,30%)
+  border-color: black
+  color: white
+
+textarea
+  background: hsl(0,0%,20%)
+  color: white
+  border-color: black
+  outline: none
+
+  &:focus, &:active
+    outline: none
+    border-color: hsl(204, 33%, 68%)
+
 /* RES stuff */
 div.thing .RES-keyNav-activeElement, div.thing .RES-keyNav-activeElement.entry div.noncollapsed, div.thing .RES-keyNav-activeElement.entry div.noncollapsed div.md
   background-color: hsl(225, 67%, 16%) !important
 
-.sitetable
+#progressIndicator
+  background: hsl(0,0%,30%)
 
-  @for $i from 1 to 9
+#authorInfoToolTip, .RESDialogSmall
+  background: hsl(0,0%,30%)
+  border: 1px solid black
+  color: white
+
+  a
+    color: white
+
+  &::before
+    border-right-color: black !important
+
+  &::after
+    border-right-color: hsl(0,0%,20%) !important
+
+  h3
+    background: hsl(0,0%,20%)
+    border-bottom: 1px solid hsl(0,0%,10%)
+    color: white
+
+  .RESCloseButton
+    background: hsl(0,0%,10%)
+    border: black
+
+.usertext-edit .RESDialogSmall .md.RESDialogContents
+  background-color: hsl(0,0%,30%) !important
+
+@for $i from 1 to 11
+  .res-commentBoxes
     #{multiply(".comment ", $i)}
       border: 1px solid hsl(212, 7%, 30%) !important
-    #{multiply(".comment ", $i - 1)} .thing.even.comment
-      background-color: #2D2F30 !important
-    #{multiply(".comment ", $i - 1)} .thing.odd.comment
-      background-color: #1d1f20 !important
+      @if $i % 2 == 0
+        background-color: #2D2F30 !important
+      @else
+        background-color: #1d1f20 !important
