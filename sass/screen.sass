@@ -226,13 +226,13 @@ textarea
     border-color: hsl(204, 33%, 68%)
 
 /* RES stuff */
-div.thing .RES-keyNav-activeElement, div.thing .RES-keyNav-activeElement.entry div.noncollapsed, div.thing .RES-keyNav-activeElement.entry div.noncollapsed div.md
+body.res div.thing .RES-keyNav-activeElement, div.thing .RES-keyNav-activeElement.entry div.noncollapsed, div.thing .RES-keyNav-activeElement.entry div.noncollapsed div.md
   background-color: hsl(225, 67%, 16%) !important
 
-#progressIndicator
+body.res #progressIndicator
   background: hsl(0,0%,30%)
 
-#authorInfoToolTip, .RESDialogSmall
+body.res #authorInfoToolTip, body.res .RESDialogSmall
   background: hsl(0,0%,30%)
   border: 1px solid black
   color: white
@@ -255,11 +255,11 @@ div.thing .RES-keyNav-activeElement, div.thing .RES-keyNav-activeElement.entry d
     background: hsl(0,0%,10%)
     border: black
 
-.usertext-edit .RESDialogSmall .md.RESDialogContents
+body.res .usertext-edit .RESDialogSmall .md.RESDialogContents
   background-color: hsl(0,0%,30%) !important
 
 @for $i from 1 to 11
-  .res-commentBoxes
+  body.res .res-commentBoxes
     #{multiply(".comment ", $i)}
       border: 1px solid hsl(212, 7%, 30%) !important
       @if $i % 2 == 0
