@@ -259,7 +259,7 @@ body.res .usertext-edit .RESDialogSmall .md.RESDialogContents
   background-color: hsl(0,0%,30%) !important
 
 @for $i from 1 to 11
-  body.res .res-commentBoxes
+  .res-commentBoxes body.res
     #{multiply(".comment ", $i)}
       border: 1px solid hsl(212, 7%, 30%) !important
       @if $i % 2 == 0
